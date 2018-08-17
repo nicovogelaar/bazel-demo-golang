@@ -9,6 +9,9 @@ os:
 env:
 - V=0.16.0 OS=linux
 
+before_cache:
+- sudo chown -R travis:travis $HOME/.cache/bazel
+
 cache:
   directories:
   - $HOME/.cache/bazel
