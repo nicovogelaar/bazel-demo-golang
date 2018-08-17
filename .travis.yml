@@ -10,8 +10,7 @@ os:
   - linux
 
 env:
-  - V=0.16.0
-  - OS=linux
+  - V=0.16.0 OS=linux
 
 before_install:
   - |
