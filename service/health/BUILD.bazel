@@ -1,0 +1,20 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "go_default_library",
+    srcs = ["health.go"],
+    importpath = "github.com/nicovogelaar/bazel-demo-golang/service/health",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//pkg/logs:go_default_library",
+        "//vendor/google.golang.org/grpc:go_default_library",
+        "//vendor/google.golang.org/grpc/health:go_default_library",
+        "//vendor/google.golang.org/grpc/health/grpc_health_v1:go_default_library",
+    ],
+)
+
+go_binary(
+    name = "health",
+    embed = [":go_default_library"],
+    visibility = ["//visibility:public"],
+)
