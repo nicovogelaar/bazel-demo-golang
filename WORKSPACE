@@ -43,9 +43,27 @@ go_repository(
 )
 
 go_repository(
+    name = "com_github_sirupsen_logrus",
+    commit = "3e01752db0189b9157070a0e1668a620f9a85da2",
+    importpath = "github.com/sirupsen/logrus",
+)
+
+go_repository(
     name = "org_golang_google_genproto",
     commit = "c66870c02cf823ceb633bcd05be3c7cda29976f4",
     importpath = "google.golang.org/genproto",
+)
+
+go_repository(
+    name = "org_golang_google_grpc",
+    commit = "32fb0ac620c32ba40a4626ddf94d90d12cce3455",
+    importpath = "google.golang.org/grpc",
+)
+
+go_repository(
+    name = "org_golang_x_crypto",
+    commit = "aabede6cba87e37f413b3e60ebfc214f8eeca1b0",
+    importpath = "golang.org/x/crypto",
 )
 
 go_repository(
@@ -64,22 +82,4 @@ go_repository(
     name = "org_golang_x_text",
     commit = "f21a4dfb5e38f5895301dc265a8def02365cc3d0",
     importpath = "golang.org/x/text",
-)
-
-go_repository(
-    name = "com_github_sirupsen_logrus",
-    commit = "3e01752db0189b9157070a0e1668a620f9a85da2",
-    importpath = "github.com/sirupsen/logrus",
-)
-
-go_repository(
-    name = "org_golang_x_crypto",
-    commit = "aabede6cba87e37f413b3e60ebfc214f8eeca1b0",
-    importpath = "golang.org/x/crypto",
-)
-
-go_repository(
-    name = "org_golang_google_grpc",
-    commit = "32fb0ac620c32ba40a4626ddf94d90d12cce3455",
-    importpath = "google.golang.org/grpc",
 )
