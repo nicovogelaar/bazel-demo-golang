@@ -9,15 +9,16 @@ os:
 env:
 - V=0.16.0 OS=linux
 
-before_cache:
-- sudo chown -R travis:travis $HOME/.cache/bazel
-
 cache:
   directories:
   - $HOME/.cache/bazel
 
 before_install:
 - |
+  sudo mkdir -p $HOME/.cache/bazel
+  sudo chown -R travis:travis $HOME/.cache/bazel
+  sudo chmod -R 777 $HOME/.cache/bazel
+  sudo rm -rf $HOME/.cache/bazel/_bazel_travis/install
   sysctl kernel.unprivileged_userns_clone=1
   URL="https://github.com/bazelbuild/bazel/releases/download/${V}/bazel-${V}-installer-${OS}-x86_64.sh"
   wget -O install.sh "${URL}"
